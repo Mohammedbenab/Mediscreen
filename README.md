@@ -22,21 +22,21 @@ Who are requierments for this projet : <br/>
  ```
 2 - Launch docker images
  ```bash
-   docker run <name-file>
-  ```
-  
-Option : </br>
+  docker run <name-file>
+ ```
+</br>  
+**Option** : </br>
 1 - Clone project on your desktop
  ```bash
-  git pull https://github.com/Mohammedbenab/Mediscreen.git
+  git clone https://github.com/Mohammedbenab/Mediscreen.git
  ```
 2 - Creat .jar files
  ```bash
-   mvn clean install <name-service>
-  ```
+  mvn clean install <name-service>
+ ```
 3 - Launch .jar files
  ```bash
-   java -jar <name.jar> 
-  ```
+  java -jar <name.jar> 
+ ```
  
   

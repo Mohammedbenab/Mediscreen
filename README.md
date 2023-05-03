@@ -5,6 +5,6 @@ This project is an application for a medical center. The client needs management
 
 # Setting up and launching project on your IDE (Eclipse or IntelliJ)
  Who are riquierments for this projet : <br/>
-  ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white-6.0.x-green)
+  ![MongoDB](https://img.shields.io/badge/MongoDB-6.0.x-green)
  
   

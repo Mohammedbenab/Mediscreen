@@ -39,7 +39,7 @@ Who are requierments for this projet : <br/>
   java -jar <name.jar> 
  ```
  # Endpoints Microservices and Swagger UI documentations
-  Note-servie : http://localhost:8083/swagger-ui/index.html#
-  Patient-servie : http://localhost:8081/swagger-ui/index.html#
-  Risk-servie : http://localhost:8082/swagger-ui/index.html#
-  Front-end : http://localhost:4200/swagger-ui/index.html#
+  - Note-servie : http://localhost:8083/swagger-ui/index.html#
+  - Patient-servie : http://localhost:8081/swagger-ui/index.html#
+  - Risk-servie : http://localhost:8082/swagger-ui/index.html#
+  - Front-end : http://localhost:4200/swagger-ui/index.html#

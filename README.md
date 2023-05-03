@@ -16,9 +16,9 @@ This project is an application for a medical center. The client needs management
   </br>
   
   1 - Clone project on your desktop
-   ```bash
-    git clone https://github.com/Mohammedbenab/Mediscreen.git
-    ```
+  ```bash
+  git clone https://github.com/Mohammedbenab/Mediscreen.git
+  ```
   
  
   

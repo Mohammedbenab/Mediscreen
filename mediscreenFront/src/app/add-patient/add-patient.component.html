@@ -1,0 +1,57 @@
+<div class="col-md-12 col-sm-12 p-0 m-0" style="background-color: white;height: 90%;">
+    <div *ngIf="showMessageSuccess" class="alert alert-success alert-dismissible fade show text-center" role="alert">
+        {{message}}
+        <button type="button" successMessage="false" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    <div *ngIf="showMessageError" class="alert alert-danger alert-dismissible fade show text-center" role="alert">
+        {{message}}
+        <button type="button" successMessage="false" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+<div class="col-md-8 offset-md-2 p-3 col-sm-12">
+    <h2> Create patient </h2>
+    <form (ngSubmit) = "onSubmit()">
+    
+        <div class="form-group">
+            <label> First Name</label>
+            <input type="text" class ="form-control" id = "nom"
+                [(ngModel)] = "patientDto.nom" name = "nom">
+        </div>
+    
+        <div class="form-group">
+            <label> Last Name</label>
+            <input type="text" class ="form-control" id = "prenom"
+                [(ngModel)] = "patientDto.prenom" name = "prenom">
+        </div>
+
+        <div class="form-group">
+            <label> Birthday</label>
+            <input type="date" class ="form-control" id = "dateDeNaissance" required pattern="\d{4}-\d{2}-\d{2}"
+                [(ngModel)] = "patientDto.dateDeNaissance" name = "dateDeNaissance">
+        </div>
+
+        <div class="form-group">
+            <label> Address</label>
+            <input type="text" class ="form-control" id = "adressePostale"
+                [(ngModel)] = "patientDto.adressePostale" name = "adressePostale">
+        </div>
+    
+        <div class="form-group">
+            <label> Gender</label>
+            <input type="text" class ="form-control" id = "genre"
+                [(ngModel)] = "patientDto.genre" name = "genre">
+        </div>
+
+        <div class="form-group">
+            <label> Phone number</label>
+            <input type="text" class ="form-control" id = "telephone"
+                [(ngModel)] = "patientDto.telephone" name = "telephone">
+        </div>
+    
+        <div class="p-1 mt-2 offset-md-9">
+            <a class="btn btn-danger" href="/services" role="button">Cancel</a>
+            <button class = "btn btn-success  mx-3" type ="submit">Submit</button>
+        </div>
+    
+    </form>
+    </div> 
+</div>

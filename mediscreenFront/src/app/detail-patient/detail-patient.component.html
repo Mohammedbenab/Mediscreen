@@ -1,0 +1,106 @@
+<div class="detail-patient">
+    <div *ngIf="showMessageSuccess" class="alert alert-success alert-dismissible fade show text-center" role="alert">
+        {{message}}
+        <button type="button" successMessage="false" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    <div *ngIf="showMessageError" class="alert alert-danger alert-dismissible fade show text-center" role="alert">
+        {{message}}
+        <button type="button" successMessage="false" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    <div class="col-md-6 offset-md-3">
+    <h3> View Patient Details</h3>
+    <div>
+        <div>
+            <label> <b> First Name: </b></label> {{patient.nom}}
+        </div>
+        <div>
+            <label> <b> Last Name: </b></label> {{patient.prenom}}
+        </div>
+        <div>
+            <label> <b> Birthday: </b></label> {{patient.dateDeNaissance}}
+        </div>
+        <div>
+            <label> <b> Gender: </b></label> {{patient.genre}}
+        </div>
+        <div>
+            <label> <b> Address: </b></label> {{patient.adressePostale}}
+        </div>
+        <div>
+            <label> <b> Phone number: </b></label> {{patient.telephone}}
+        </div>
+    </div>
+
+<!--Get risk of patient start modal-->
+    <button type="button" class="btn btn-success mt-2" (click)="getRisk()" data-bs-toggle="modal" data-bs-target="#risk">
+        Risk
+    </button>
+     <!-- Modal get risk-->
+     <div class="modal fade" id="risk" tabindex="-1" aria-labelledby="addNoteLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="addNoteLabel"> Diabetes assessment is :</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <h2>Result of patient : {{risk.result}}</h2>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+        </div>
+    </div>
+<!--Get risk of patient end modal-->
+
+<!--Add note form start-->
+    <!-- Button trigger modal add note-->
+    <button type="button" class="btn btn-success mt-2 mx-2" data-bs-toggle="modal" data-bs-target="#addNote">
+        Add Note
+    </button>
+    
+    <!-- Modal add note-->
+    <div class="modal fade" id="addNote" tabindex="-1" aria-labelledby="addNoteLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="addNoteLabel">New Note of patient</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Note</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" [(ngModel)] = "noteInpute" rows="3"></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="saveNote()">Save note</button>
+            </div>
+        </div>
+        </div>
+    </div>
+  <!--Add note form end-->
+
+    <div class="table">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th> Note </th>
+                    <th> Actions </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor = "let note of listNotes" >
+                    <td> {{ note.noteId }} </td>
+                    <td> {{ note.note }} </td>
+                    <td>
+                        <button (click) = "deleteNote(note.noteId)" class = "btn btn-danger" style="margin-left: 10px"> Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</div>

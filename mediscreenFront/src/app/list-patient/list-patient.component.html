@@ -1,0 +1,39 @@
+<div class="list">
+    <div *ngIf="showMessageSuccess" class="alert alert-success alert-dismissible fade show text-center" role="alert">
+        {{message}}
+        <button type="button" successMessage="false" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    <div *ngIf="showMessageError" class="alert alert-danger alert-dismissible fade show text-center" role="alert">
+        {{message}}
+        <button type="button" successMessage="false" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+<div class="col-md-8 offset-md-2 col-sm-12">
+    <h2> Patients List</h2>
+    <a class="btn btn-success" href="/add-patient" role="button">New Patient</a>
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th> First Name</th>
+                    <th> Last Name </th>
+                    <th> Gender</th>
+                    <th> BirthDay</th>
+                    <th> Actions </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor = "let patient of patients" >
+                    <td> {{ patient.nom }} </td>
+                    <td> {{ patient.prenom }} </td>
+                    <td> {{ patient.genre }} </td>
+                    <td> {{ patient.dateDeNaissance }} </td>
+                    <td>
+                        <button (click) = "detailPatient(patient.id)" class = "btn btn-success" style="margin-right: 10px"> View</button>
+                        <button (click) = "updatePatient(patient.id)" class = "btn btn-info"> Update</button>
+                        <button (click) = "deletePatient(patient.id)" class = "btn btn-danger" style="margin-left: 10px"> Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

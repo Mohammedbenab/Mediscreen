@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+	  xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../../css/bootstrap.min.css" >
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+<title>Update user</title>
+</head>
+<style>
+	.nav-link{
+	color: #ffffff;
+	width: 100px;
+	}
+</style>
+<body>
+<div class="container">
+	  <div th:if=${messageError} class="alert alert-danger text-center" role="alert">
+	  	[[${messageError}]]
+	  </div>
+	  <div class="row">
+			<nav class="navbar navbar-light bg-light">
+			 <a class="navbar-brand">Logo</a>
+			  <form class="form-inline">
+			    <input class="form-control sm-12" type="search" placeholder="Search" aria-label="Search">
+			    <button class="btn btn-outline-success col-md-6 sm-12" type="submit">Search</button>
+			  </form>
+			</nav>
+		</div>
+     	<div class="row">
+	      <nav class="navbar navbar-expand-lg" style="background-color: #00849a;">
+			<a class="navbar-brand" href="#">Mediscreen</a>
+			  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+			    <span class="navbar-toggler-icon"></span>
+			  </button>
+			  <div class="collapse navbar-collapse offset-md-5" id="navbarNavAltMarkup">
+			    <div class="navbar-nav" style="color: #ffffff;">
+			      <a class="nav-item nav-link" href="/home">Home</a>
+			      <a class="nav-item nav-link" href="#">About</a>
+			      <a class="nav-item nav-link" href="/patient/list">Services</a>
+			      <a class="nav-item nav-link" href="#">Resources</a>
+			      <a class="nav-item nav-link" href="#">New Blog</a>
+			    </div>
+			  </div>
+			</nav>
+		</div>
+    		<div class="row mt-4 offset-md-4">
+				<h2>Update Patient</h2>
+			</div>
+			<div class="row">
+				<div class="col-sm-12 col-md-12">
+					<form action="#" th:action="@{/patient/update/{id}(id=${patient.id})}" th:object="${patient}" method="post" class="form-horizontal" style="width: 100%">
+						<div class="form-group">
+							<div class=offset-md-4>
+								<label for="prenom" class="col-md-4 control-label">Prenom</label>
+								<div class="col-md-10">
+									<input type="text" th:field="*{prenom}" id="prenom" placeholder="Prénom" class="col-9" required>
+									<p class="text-danger" th:if="${#fields.hasErrors('prenom')}" th:errors="*{prenom}"></p>
+								</div>
+							</div>
+						</div>
+						<div class="form-group mt-4">
+							<div class="offset-md-4">
+								<label for="nom" class="col-md-4 control-label">Nom</label>
+								<div class="col-md-10">
+									<input type="text" th:field="*{nom}" id="nom" placeholder="Nom de famille" class="col-9" required>
+									<p class="text-danger" th:if="${#fields.hasErrors('nom')}" th:errors="*{nom}"></p>
+								</div>
+							</div>
+						</div>
+						<div class="form-group mt-4">
+							<div class="offset-md-4">
+								<label for="dateDeNaissance" class="col-md-4 control-label">Date de naissance</label>
+								<div class="col-md-10">
+									<input type="text" th:field="*{dateDeNaissance}" id="dateDeNaissance" placeholder="Date de naissance" class="col-9" required>
+									<p class="text-danger" th:if="${#fields.hasErrors('dateDeNaissance')}" th:errors="*{dateDeNaissance}"></p>
+								</div>
+							</div>
+						</div>
+						<div class="form-group mt-4">
+							<div class="offset-md-4">
+								<label for="genre" class="col-md-4 control-label">Genre</label>
+								<div class="col-md-10">
+									<select th:field="*{genre}">
+										<option th:each="genre : ${genres}"
+												th:text="${genre.name}"
+												th:value="${genre}">
+										</option>
+									</select>
+								</div>
+							</div>
+						</div>
+						<div class="form-group mt-4">
+							<div class="offset-md-4">
+								<label for="adressePostale" class="col-md-4 control-label">Adresse postale</label>
+								<div class="col-md-10">
+									<input type="text" th:field="*{adressePostale}" id="adressePostale" placeholder="Adresse Postale" class="col-9" required>
+									<p class="text-danger" th:if="${#fields.hasErrors('adressePostale')}" th:errors="*{adressePostale}"></p>
+								</div>
+							</div>
+						</div>
+						<div class="form-group mt-4">
+							<div class="offset-md-4">
+								<label for="telephone" class="col-md-4 control-label">Téléphone</label>
+								<div class="col-md-10">
+									<input type="text" th:field="*{telephone}" id="telephone" placeholder="Telephone" class="col-9" required>
+									<p class="text-danger" th:if="${#fields.hasErrors('telephone')}" th:errors="*{telephone}"></p>
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class=offset-md-4>
+								<div class="col-md-12">
+									<input type="hidden" th:field="*{id}">
+									<a class="btn btn-danger btn-md" href="/patient/list">Cancel</a>
+									<input class="btn btn-primary btn-md" type="submit" value="Update patient">
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+</div>
+</body>
+</html>

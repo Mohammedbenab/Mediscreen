@@ -14,18 +14,30 @@ Who are requierments for this projet : <br/>
   ![J-Unit](https://img.shields.io/badge/JUnit-5.0-orange)
   ![Docker](https://img.shields.io/badge/Docker-20.10.24-cyan)
   </br>
+  
+1 - Clone docker images on your desktop
+| WARNING: be careful to baz the quux before initializing the retro encabulator! |
+| --- |
+ ```bash
+  docker pull https://hub.docker.com/repositories/mohammedbenab
+ ```
+2 - Launch docker images
+ ```bash
+   docker run <name-file>
+  ```
+  
+Option : 
 1 - Clone project on your desktop
  ```bash
-  git clone https://github.com/Mohammedbenab/Mediscreen.git
+  git pull https://github.com/Mohammedbenab/Mediscreen.git
  ```
 2 - Creat .jar files
  ```bash
-   clean mvn install <name-service>
+   mvn clean install <name-service>
   ```
-3 - Creat contener with Docker
+3 - Launch .jar files
  ```bash
-  docker build -t <name-docker-file> .
- ```
-  
+   java -jar <name.jar> 
+  ```
  
   

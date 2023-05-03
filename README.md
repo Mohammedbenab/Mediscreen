@@ -25,7 +25,7 @@ Who are requierments for this projet : <br/>
    docker run <name-file>
   ```
   
-Option : 
+Option : </br>
 1 - Clone project on your desktop
  ```bash
   git pull https://github.com/Mohammedbenab/Mediscreen.git

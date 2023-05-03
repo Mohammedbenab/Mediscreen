@@ -5,8 +5,8 @@ This project is an application for a medical center. The client needs management
 
 # Setting up and launching project on your IDE (Eclipse or IntelliJ)
  Who are requierments for this projet : <br/>
-  ![Java](https://img.shields.io/badge/MongoDB-1.8.x-red)
-  ![Maven](https://img.shields.io/badge/MongoDB-6.0.x-green)
+  ![Java](https://img.shields.io/badge/Java-1.8.x-red)
+  ![Maven](https://img.shields.io/badge/Maven-6.0.x-green)
   ![NodeJS](https://img.shields.io/badge/NodeJS-18.3.0-green)
   ![Angular](https://img.shields.io/badge/Angular-15.1.2-red)
   ![MongoDB](https://img.shields.io/badge/MongoDB-6.0.x-green)

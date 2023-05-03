@@ -14,10 +14,9 @@ Who are requierments for this projet : <br/>
   ![J-Unit](https://img.shields.io/badge/JUnit-5.0-orange)
   ![Docker](https://img.shields.io/badge/Docker-20.10.24-cyan)
   </br>
-  
+
 1 - Clone docker images on your desktop
-| WARNING: be careful to baz the quux before initializing the retro encabulator! |
-| --- |
+> :warning: **Docker hub**: You need to login by your account!
  ```bash
   docker pull https://hub.docker.com/repositories/mohammedbenab
  ```

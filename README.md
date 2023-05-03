@@ -24,7 +24,7 @@ Who are requierments for this projet : <br/>
  ```bash
   docker run <name-file>
  ```
-</br>  
+ 
 **Option** : </br>
 1 - Clone project on your desktop
  ```bash
